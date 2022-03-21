@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Noom
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+    body
+        header
+            h1 Chatting Room
+        main
+            h2 Welcome to Chat Room
+            div#msg-list
+                ul
+            div 
+                form#nick-form
+                    input#msg(type="text" placeholder="nickname")
+                    button Save
+                form#msg-form
+                    input#msg(type="text" placeholder="message")
+                    button Send
+
+
+        script(src="/public/app.js") 
