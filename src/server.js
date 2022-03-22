@@ -19,6 +19,7 @@ const wss = new WebSocket.Server({ server });
 const sockets = [];
 
 wss.on("connection", (socket) => {
+  socket["nickname"] = "Anon";
   sockets.push(socket);
   socket.on("close", () => console.log("Disconnected from the Browser  ❌"));
   socket.on("message", (msg) => {
