@@ -5,29 +5,23 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Noom
-        link(rel="stylesheet", href="/public/css/styles.css")
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
     body
-        div#welcome
-            header
-                h1 Chatting Room
-            h2 Welcome to Chat Room
-          
-        div#nick
-            form#nick-form
-                input(type="text" placeholder="write your nickname" required)
-                button Save
-            div#nick-span
-                span 
-        div#msg-list
-            ul
-        div#room
-            div#msg
-                form#msg-form
+        header
+            h1 Noom
+        main
+            div#welcome
+                form
+                    input(type="text" placeholder="room name" required)
+                    button Enter Room
+            div#room 
+                h3 
+                ul
+                form#nick
+                    input(type="text" placeholder="nickname" required)
+                    button Change
+                form#msg
                     input(type="text" placeholder="message" required)
-                    button
-                        i.fas.fa-arrow-up
-           
-
-        script(src="https://kit.fontawesome.com/6478f529f2.js"
-        crossorigin="anonymous")
+                    button Send
+        script(src="/socket.io/socket.io.js") 
         script(src="/public/app.js") 
