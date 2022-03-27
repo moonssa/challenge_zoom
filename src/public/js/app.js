@@ -17,6 +17,7 @@ let muted = false;
 let cameraOff = false;
 
 let roomName;
+let nickName;
 let myPeerConnection;
 let myDataChannel;
 
@@ -114,29 +115,49 @@ camerasSelect.addEventListener("input", handleCameraChange);
 // welcome form
 
 const welcomeForm = welcome.querySelector("form");
+const nicknameForm = welcome.querySelector("#nickname");
 const dataForm = data.querySelector("form");
 
 async function initCall() {
-  welcome.hidden = true;
+  // welcome.hidden = true;
   call.hidden = false;
 
   await getMedia();
   makeConnection();
 }
+
+function showRoom() {
+  const spanRoom = document.getElementById("pannel_room");
+  spanRoom.innerText = `Room : ${roomName}`;
+}
+
+function showNickname() {
+  const spanNick = document.getElementById("pannel_nickname");
+  spanNick.innerText = `nickname : ${nickName}`;
+}
+
 async function handleWelcomeSubmit(event) {
   event.preventDefault();
   const input = welcomeForm.querySelector("input");
   await initCall();
   roomName = input.value;
-  socket.emit("join_room", roomName);
+  socket.emit("join_room", roomName, showRoom);
   input.value = "";
 }
-
+function handleNicknameSubmit(event) {
+  event.preventDefault();
+  const input = nicknameForm.querySelector("input");
+  console.log(input.value);
+  nickName = input.value;
+  showNickname();
+  //socket.emit("nickname", nickName, showNickname);
+  input.value = "";
+}
 // dataChannel
 
 function showChatList(msg) {
-  ul = data.querySelector("ul");
-  li = document.createElement("li");
+  const ul = data.querySelector("ul");
+  const li = document.createElement("li");
   li.innerText = msg;
   ul.append(li);
 }
@@ -144,11 +165,13 @@ function showChatList(msg) {
 function handleDataSubmit(event) {
   event.preventDefault();
   const input = dataForm.querySelector("input");
-  myDataChannel.send(input.value);
+  myDataChannel.send(`${nickName}: ${input.value}`);
   showChatList(`You : ${input.value}`);
+  input.value = "";
 }
 
 welcomeForm.addEventListener("submit", handleWelcomeSubmit);
+nicknameForm.addEventListener("submit", handleNicknameSubmit);
 dataForm.addEventListener("submit", handleDataSubmit);
 
 function handleDataChannel(event) {
@@ -160,6 +183,9 @@ function handleDataChannel(event) {
 socket.on("welcome", async () => {
   // data call
   data.hidden = false;
+
+  // addMessage();
+
   myDataChannel = myPeerConnection.createDataChannel("chat");
   myDataChannel.addEventListener("message", handleDataChannel);
   console.log("made data channel");
