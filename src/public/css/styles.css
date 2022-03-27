@@ -6,22 +6,43 @@
   }
 } */
 
-body {
+/* body {
   height: 100vh;
   margin: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: beige;
+  background-color: #92a4b2;
+
+} */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #0e1117;
+  color: white;
 }
 
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
 h1 {
-  font-size: xx-large;
+  font-size: 60px;
+  font-weight: 600;
   text-align: center;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 #welcome {
   display: flex;
   justify-content: center;
+}
+
+#welcome input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 #pannel {
@@ -34,14 +55,6 @@ h1 {
   justify-content: space-evenly;
 }
 
-#myFace-btn {
-}
-
-input {
-  margin-left: 10px;
-  width: 120px;
-}
-
 input,
 button {
   box-sizing: border-box;
@@ -50,11 +63,33 @@ button {
   padding: 5px;
 }
 
+/* 
 input {
   margin-left: 10px;
   width: 150px;
+*/
+
+#welcome input {
+  all: unset;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: black;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: white;
+  width: 50%;
 }
 
+#welcome button {
+  font-size: 18px;
+  height: 49px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*
 button {
   border-radius: 5px;
 }
@@ -62,23 +97,47 @@ button {
 #welcome {
   boder: 2px solid rgba(255, 255, 255, 0.4);
 }
+*/
 
+#myFace-control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#cameras {
+  width: 80%;
+  font-size: 16px;
+  padding: 2px;
+  border-radius: 5px;
+}
+i {
+  font-size: 18px;
+}
+/* #myFace {
+  position: relative;
+}
+
+#myFace-btn {
+  position: absolute;
+  bottom: -10px;
+} */
 #data {
   position: relative;
-  width: 400px;
+  width: 600px;
   height: 200px;
-  background-color: aqua;
+  background-color: #b6cddd;
+  border-radius: 10px;
 }
 
 #data {
   margin: auto;
+  color: #0e1117;
 }
 #data ul {
   overflow: auto;
-  height: 80%;
-}
-
-#data form {
+  height: 70%;
+  padding: 10px;
 }
 
 #data input,
@@ -91,22 +150,3 @@ button {
 #data input {
   width: 100%;
 }
-
-/* #data ul {
-  overflow: auto;
-  width: 300px;
-  height: 200px;
-  background-color: aqua;
-} 
- #data {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 300px;
-  height: 200px;
-  background-color: aqua;
-}
-*/

@@ -6,6 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Noom
         //- link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css")
         link(rel="stylesheet", href="/public/css/styles.css")
     body
         header
@@ -25,10 +26,13 @@ html(lang="en")
                 div#myStream
                     div
                         video#myFace(autoplay, playsinline, width="400", height="350")
-                        div#myFace-btn
-                            button#mute Mute 
-                            button#camera Camera Off
-                        select#cameras
+                        div#myFace-control
+                            div#myFace-btn
+                                button#mute 
+                                    i.fas.fa-volume-up
+                                button#camera 
+                                    i.fa-solid.fa-video-slash
+                            select#cameras
                     div
                         video#peerFace(autoplay, playsinline, width="400", height="350")
             div#data 

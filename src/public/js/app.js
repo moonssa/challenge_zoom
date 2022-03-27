@@ -2,7 +2,9 @@ const socket = io();
 
 const myFace = document.getElementById("myFace");
 const muteBtn = document.getElementById("mute");
+const muteBtnIcon = muteBtn.querySelector("i");
 const cameraBtn = document.getElementById("camera");
+const cameraBtnIcon = cameraBtn.querySelector("i");
 const camerasSelect = document.getElementById("cameras");
 
 const welcome = document.getElementById("welcome");
@@ -75,10 +77,12 @@ function handleMuteClick() {
     .forEach((track) => (track.enabled = !track.enabled));
 
   if (!muted) {
-    muteBtn.innerText = "Unmuted";
+    // muteBtn.innerText = "Unmuted";
+    muteBtnIcon.classList = "fas fa-volume-mute";
     muted = true;
   } else {
-    muteBtn.innerText = "Mute";
+    // muteBtn.innerText = "Mute";
+    muteBtnIcon.classList = "fas fa-volume-up";
     muted = false;
   }
 }
@@ -88,10 +92,12 @@ function handleCameraClick() {
     .getVideoTracks()
     .forEach((track) => (track.enabled = !track.enabled));
   if (cameraOff) {
-    cameraBtn.innerText = "Turn Camera Off";
+    // cameraBtn.innerText = "Turn Camera Off";
+    cameraBtnIcon.classList = "fa-solid fa-video-slash";
     cameraOff = false;
   } else {
-    cameraBtn.innerText = "Turn Camera On";
+    // cameraBtn.innerText = "Turn Camera On";
+    cameraBtnIcon.classList = "fa-solid fa-video";
     cameraOff = true;
   }
 }
