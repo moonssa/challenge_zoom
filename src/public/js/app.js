@@ -133,7 +133,7 @@ function showRoom() {
 
 function showNickname() {
   const spanNick = document.getElementById("pannel_nickname");
-  spanNick.innerText = `nickname : ${nickName}`;
+  spanNick.innerText = `  , Nickname : ${nickName}`;
 }
 
 async function handleWelcomeSubmit(event) {

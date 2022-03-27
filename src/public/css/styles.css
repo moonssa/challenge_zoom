@@ -1,128 +1,112 @@
-@import "reset.css"; 
+@import "reset.css";
+
+/* @media screen and (min-width: 800px) {
+  body {
+    width: 50%;
+  }
+} */
 
 body {
   height: 100vh;
+  margin: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color:#f6f9fc;
-
+  background-color: beige;
 }
 
 h1 {
-    padding-top: 30px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 500;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-size: xx-large;
+  text-align: center;
+  margin-bottom: 30px;
 }
 #welcome {
-    padding-top: 50px;
-    
-
-    
-}
-#room {
-    width: 500px;
-    height: 800px;
+  display: flex;
+  justify-content: center;
 }
 
-#bye-room{
-
-    margin-top: 20px;
+#pannel {
+  margin-top: 30px;
+  font-size: large;
+  text-align: center;
+}
+#myStream {
+  display: flex;
+  justify-content: space-evenly;
 }
 
+#myFace-btn {
+}
 
-input { 
-    margin: 5px 0;
-    padding: 5px 5px;
-    font-size: 18px;
-    height: 18px
+input {
+  margin-left: 10px;
+  width: 120px;
+}
+
+input,
+button {
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 18px;
+  padding: 5px;
+}
+
+input {
+  margin-left: 10px;
+  width: 150px;
 }
 
 button {
-    padding: 5px 5px;
-    width : 80px;
-    font-size: 18px;
+  border-radius: 5px;
 }
 
-span {
-    margin-left : 20px;
-    font-size: 25px;
+#welcome {
+  boder: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-#msg {
-    position: fixed;
-    bottom: 0;
-    width: 98%;
-    height: 40px;
-    padding: 5px;
-  }
-  #msg-form {
-    position: relative;
-  }
-  
-  #msg-form input {
-    width: 98%;
-    position: absolute;
-    right: 0;
-  }
-  #msg-form button {
-    position: absolute;
-    right: 0;
-    
-
-    width : 80px;
-    
-  }
-  
-/* #welcome h1{
-    margin-bottom: 10px;
-    font-size: 20px;
+#data {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background-color: aqua;
 }
 
-
-#nick {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+#data {
+  margin: auto;
 }
-#nick-span {
-    margin-top: 10px;
-    background-color: antiquewhite;
-    padding: 5px;
-}
-#msg-list {
-    margin-top:10px;
-    margin-left: 20px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
+#data ul {
+  overflow: auto;
+  height: 80%;
 }
 
-#msg {
-    position: fixed;
-    bottom:0;
-    width: 98%;
-    height: 40px;
-    padding: 5px;
-}
-#msg-form {
-    position: relative;
+#data form {
 }
 
-#msg-form  input{
-    width: 98%;
-    position: absolute;
-    right:0    
+#data input,
+#data button {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
 }
-#msg-form button{
-    position: absolute;
-    right:0   
-} */
+
+#data input {
+  width: 100%;
+}
+
+/* #data ul {
+  overflow: auto;
+  width: 300px;
+  height: 200px;
+  background-color: aqua;
+} 
+ #data {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 300px;
+  height: 200px;
+  background-color: aqua;
+}
+*/
