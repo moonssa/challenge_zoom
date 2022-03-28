@@ -25,10 +25,10 @@ wsServer.on("connection", (socket) => {
   socket.onAny((event) => {
     console.log(`socket event: ${event}`);
   });
-  socket.on("nickname", (nickname, done) => {
+  socket.on("nickname", (roomName, nickname, done) => {
     socket["nickname"] = nickname;
     console.log("nick");
-    done(nickname);
+    done(roomName, nickname);
   });
   socket.on("enter_room", (roomName, nickName, done) => {
     socket.join(roomName);

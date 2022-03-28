@@ -5,6 +5,8 @@ const welcomeForm = welcome.querySelector("form");
 const change = document.getElementById("change");
 const display = document.getElementById("display");
 const room = document.getElementById("room");
+const changeNicknameForm = document.getElementById("change-nickname");
+
 //const nickForm = room.querySelector("#nick");
 
 let roomName;
@@ -68,16 +70,18 @@ function addMessage(message) {
   ul.append(li);
 }
 
-function handleRoomSubmit(event) {
+function handleChangeNicknameSubmit(event) {
   event.preventDefault();
-  const input = welcomeForm.querySelector("input");
+  const input = changeNicknameForm.querySelector("input");
 
-  socket.emit("enter_room", input.value, showRoom);
-  roomName = input.value;
+  nickName = input.value;
+  socket.emit("nickname", roomName, nickName, showRoom);
   input.value = "";
 }
 
 welcomeForm.addEventListener("submit", handleWelcomeSubmit);
+changeNicknameForm.addEventListener("submit", handleChangeNicknameSubmit);
+
 // welcomeForm.addEventListener("submit", handleRoomSubmit);
 //nickForm.addEventListener("submit", handleNicknameSubmit);
 
