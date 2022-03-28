@@ -1,4 +1,36 @@
-@import "reset.css";
+#pre-room {
+  height: 180px;
+  display: flex;
+}
+
+#welcome,
+#change {
+  height: 100%;
+}
+
+button {
+  all: unset;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 3px;
+  width: 80px;
+  height: 32px;
+}
+#change-room {
+  height: 20%;
+}
+#change-nickname {
+  display: flex;
+  justify-content: space-between;
+}
+
+#change-nickname input {
+  margin-bottom: 11px;
+}
+
+/* @import "reset.css";
 
 body {
   height: 100vh;
@@ -61,4 +93,4 @@ body {
 #msg-form button{
     position: absolute;
     right:0   
-}
+} */
